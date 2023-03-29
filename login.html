@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- login Button -->
+    <a href="" id="loginBtn">login</a>
+    <div id="loginWrapper">
+        <div id="loginContainer">
+            <div id="loginSlider">
+                <div class="slide">
+                    <img src="https://static1.hkrtcdn.com/hknext/static/media/login/slider/1.svg" alt="image">
+                    <h4>Wide range of Original & Authentic Nutritional Products</h4>
+                    <p>We strive to provide 100% authentic products to our customers</p>
+                </div>
+                <div class="slide"><img src="https://static1.hkrtcdn.com/hknext/static/media/login/slider/2.svg" alt="image">
+                    <h4>Get Personalized Diet Plans and Fitness Advice</h4>
+                    <p>Start your journey towards a healthy lifestyle</p>
+                </div>
+                <div class="slide"><img src="https://static1.hkrtcdn.com/hknext/static/media/login/slider/3.svg" alt="image">
+                    <h4>Great offers on Top Brands</h4>
+                    <p>14 days hassle-free return policy</p>
+                </div>
+
+            </div>
+            <div id="loginFormContainer">
+                <span id="closeBtn">&times</span>
+
+                <div id="formWrapper">
+                    <h2>Login or Sign-up</h2>
+                    <form id="loginForm">
+                        <div>
+                            <span id="numPrefix">+91</span>
+                            <input id="mobile" type="text" placeholder="Enter your phone number" maxlength="10" required>
+                        </div>
+                       
+                        <input type="submit" value="Get OTP">
+                    </form>
+                </div>
+
+                <div id="verifyPage">
+                    <h2>Enter verification code</h2>
+                    <p>OTP Sent to <span id="varifyMob"></span> <span id="editMob"><i class="fa-solid fa-pen"></i></span></p>
+                    <form id="verifyForm">
+                            <input id="otp" type="text" placeholder="Enter OTP" maxlength="4" required>
+                        <input id="contBtn" type="button" value="Continue">
+                    </form>
+                </div>
+
+                <div id="registerPage">
+                    <h2>Register new user</h2>
+                    <form id="regForm">
+                       <input id="name" type="text" placeholder="Enter Username" required>
+                       <input id="email" type="email" placeholder="Enter Your Email" required>
+                       <select name="" id="gender">
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="female">Female</option>
+                       </select>
+
+                    <input id="regBtn" type="submit" value="Save">
+                </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="login.js"></script>
+</html>
