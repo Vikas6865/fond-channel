@@ -41,11 +41,30 @@ function fetchData(API){
 
 
 function appendData(items){
+  
     displayData.innerHTML = null
     items.forEach((element) => {
         let card = document.createElement("div")
         card.setAttribute("class","card")
         card.setAttribute("id","card")
+
+       //card details page
+       card.addEventListener("click",()=>{
+        let carddata2=[]
+        let obj={
+          description : element.description,
+        price:element.price,
+        mrp : element.mrp,
+        discount: element.Discount,
+        image : element.image,
+        brand : element.brand,
+        quantity : element.quantity
+      }
+      carddata2.push(obj)
+      localStorage.setItem("product",JSON.stringify(carddata2))
+      location.href="http://127.0.0.1:5501/product.html"
+       })
+
 
         let imgdiv = document.createElement("div")
         imgdiv.setAttribute("class","img")
@@ -104,6 +123,7 @@ function appendData(items){
             } else {
               alert("Product already in cart 😀");
             }
+          
           });
 
 
@@ -153,6 +173,23 @@ function appendData2(items){
         card.setAttribute("class","card")
         card.setAttribute("id","card")
 
+        //card details page
+        card.addEventListener("click",()=>{
+          let carddata2=[]
+          let obj={
+            description : element.description,
+          price:element.price,
+          mrp : element.mrp,
+          discount: element.Discount,
+          image : element.image,
+          brand : element.brand,
+          quantity : element.quantity
+        }
+        carddata2.push(obj)
+        localStorage.setItem("product",JSON.stringify(carddata2))
+        location.href="http://127.0.0.1:5501/product.html"
+        })
+        
         let imgdiv = document.createElement("div")
         imgdiv.setAttribute("class","img")
         imgdiv.setAttribute("id","img")
