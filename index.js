@@ -278,6 +278,7 @@ function appendData2(items){
             }
             if (flag == true) {
               let protienMass = {...element};
+              let array=[...protienMass]
               products.push(protienMass);
               localStorage.setItem("cart", JSON.stringify(products));
               alert("Product added to cart 😊");
@@ -424,4 +425,9 @@ let gotoWithSlider = document.getElementById("slider")
 
 gotoWithSlider.addEventListener("click",()=>{
   location.href="allproducts.html"  
+})
+// go to cart page ***********************
+let cartt=document.getElementById("cart")
+cartt.addEventListener("click",()=>{
+  location.href="cart.html"
 })
