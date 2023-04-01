@@ -1,11 +1,12 @@
 
-let obj=JSON.parse(localStorage.getItem("product"))
-let cart=JSON.parse(localStorage.getItem("cart")) ||[]
-displaydata(obj)
-function displaydata(obj){
-   
 
-console.log(obj)
+let cart=JSON.parse(localStorage.getItem("cart")) ||[]
+
+displaydata()
+function displaydata(){
+    let obj=JSON.parse(localStorage.getItem("product"))
+
+
 document.getElementById("main")
 MediaDeviceInfo.innerHTML=""
 let pic=document.getElementById("pic")
@@ -103,9 +104,11 @@ let add=document.createElement("button")
 add.setAttribute("id","addcart")
 add.innerText="add to cart"
 add.addEventListener("click",()=>{
+    
     for(let i=0;i<cart.length;i++){
-        if(cart[i].description==obj.description){
+        if(cart[i][0].description==obj[0].description){
             return alert("product already in cart")
+            
         }
     }
     alert("Product added to cart")
@@ -179,12 +182,8 @@ fssai2.append(food2,lic2)
 fssai.append(fssai1,fssai2)
 data.append(name1,category,rating2,mrp,showprice,shipping,prime,emi,buy,flavour,fbutton,offer,offershow,delivery,fssai)
 }
-
-// goto home page on logo click
-
-let logo = document.getElementById("logoImg")
-logo.addEventListener("click",()=>{
-    console.log("hay")
-  location.href="index.html"
+// go to cart page ***********************
+let cartt=document.getElementById("cart")
+cartt.addEventListener("click",()=>{
+  location.href="cart.html"
 })
-

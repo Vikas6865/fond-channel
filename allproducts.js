@@ -115,6 +115,10 @@ function appendData(items){
         btndiv.setAttribute("class","btn")
         btndiv.setAttribute("id","btn")
 
+        
+       
+
+
         let cartimg = document.createElement("img")
         cartimg.setAttribute("src","All images/shopingCart.png")
         let text = document.createElement("p")
@@ -247,4 +251,10 @@ const appliedFilterObj = {
 let logo = document.getElementById("logoImg")
 logo.addEventListener("click",()=>{
   location.href="index.html"
+})
+
+// go to cart page ***********************
+let cartt=document.getElementById("cart")
+cartt.addEventListener("click",()=>{
+  location.href="cart.html"
 })
