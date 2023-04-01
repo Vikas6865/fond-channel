@@ -1,3 +1,5 @@
+
+
 // slider code*******************
 const swiper = new Swiper(".swiper", {
     autoplay: {
@@ -49,29 +51,46 @@ function appendData(items){
         card.setAttribute("id","card")
 
        //card details page
-       card.addEventListener("click",()=>{
-        let carddata2=[]
-        let obj={
-          description : element.description,
-        price:element.price,
-        mrp : element.mrp,
-        discount: element.Discount,
-        image : element.image,
-        brand : element.brand,
-        quantity : element.quantity
-      }
-      carddata2.push(obj)
-      localStorage.setItem("product",JSON.stringify(carddata2))
-      location.href="http://127.0.0.1:5501/product.html"
-       })
+      //  card.addEventListener("click",()=>{
+      //   let carddata2=[]
+      //   let obj={
+      //     description : element.description,
+      //   price:element.price,
+      //   mrp : element.mrp,
+      //   discount: element.Discount,
+      //   image : element.img,
+      //   brand : element.brand,
+      //   quantity : element.quantity
+      // }
+      // carddata2.push(obj)
+      // localStorage.setItem("product",JSON.stringify(carddata2))
+      // location.href="product.html"
+      //  })
 
 
         let imgdiv = document.createElement("div")
         imgdiv.setAttribute("class","img")
         imgdiv.setAttribute("id","img")
 
+        imgdiv.addEventListener("click",()=>{
+          let carddata2=[]
+          let obj={
+            description : element.description,
+          price:element.price,
+          mrp : element.mrp,
+          discount: element.Discount,
+          image : element.img,
+          brand : element.brand,
+          quantity : element.quantity
+        }
+        carddata2.push(obj)
+        localStorage.setItem("product",JSON.stringify(carddata2))
+        location.href="product.html"
+         })
+
+
         let image = document.createElement("img")
-        image.setAttribute("src",element.image)
+        image.setAttribute("src",element.img)
 
         let infodiv = document.createElement("div")
         infodiv.setAttribute("class","info")
@@ -174,28 +193,46 @@ function appendData2(items){
         card.setAttribute("id","card")
 
         //card details page
-        card.addEventListener("click",()=>{
+        // card.addEventListener("click",()=>{
+        //   let carddata2=[]
+        //   let obj={
+        //     description : element.description,
+        //   price:element.price,
+        //   mrp : element.mrp,
+        //   discount: element.Discount,
+        //   image : element.img,
+        //   brand : element.brand,
+        //   quantity : element.quantity
+        // }
+        // carddata2.push(obj)
+        // localStorage.setItem("product",JSON.stringify(carddata2))
+        // location.href="product.html"
+        // })
+        
+        let imgdiv = document.createElement("div")
+        imgdiv.setAttribute("class","img")
+        imgdiv.setAttribute("id","img")
+
+        imgdiv.addEventListener("click",()=>{
           let carddata2=[]
           let obj={
             description : element.description,
           price:element.price,
           mrp : element.mrp,
           discount: element.Discount,
-          image : element.image,
+          image : element.img,
           brand : element.brand,
           quantity : element.quantity
         }
         carddata2.push(obj)
         localStorage.setItem("product",JSON.stringify(carddata2))
-        location.href="http://127.0.0.1:5501/product.html"
-        })
-        
-        let imgdiv = document.createElement("div")
-        imgdiv.setAttribute("class","img")
-        imgdiv.setAttribute("id","img")
+        location.href="product.html"
+         })
+
+
 
         let image = document.createElement("img")
-        image.setAttribute("src",element.image)
+        image.setAttribute("src",element.img)
 
         let infodiv = document.createElement("div")
         infodiv.setAttribute("class","info")
@@ -369,4 +406,22 @@ regBtn.addEventListener('click',function(){
     }
     localStorage.setItem('userData',JSON.stringify(userObj));
 })
-// ******************login page js*********************
+// ******************login page js end*********************
+
+let goto = document.querySelector(".image")
+goto.addEventListener("click",()=>{
+  console.log("goto")
+  location.href="allproducts.html"
+})
+
+let Goto = document.getElementById("goto")
+Goto.addEventListener("click",()=>{
+  console.log("goto")
+  location.href="allproducts.html"
+})
+
+let gotoWithSlider = document.getElementById("slider")
+
+gotoWithSlider.addEventListener("click",()=>{
+  location.href="allproducts.html"  
+})

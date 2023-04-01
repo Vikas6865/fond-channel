@@ -179,3 +179,12 @@ fssai2.append(food2,lic2)
 fssai.append(fssai1,fssai2)
 data.append(name1,category,rating2,mrp,showprice,shipping,prime,emi,buy,flavour,fbutton,offer,offershow,delivery,fssai)
 }
+
+// goto home page on logo click
+
+let logo = document.getElementById("logoImg")
+logo.addEventListener("click",()=>{
+    console.log("hay")
+  location.href="index.html"
+})
+
