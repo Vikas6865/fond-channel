@@ -149,7 +149,7 @@ body {
     padding: 20px;
 }
 
-#orderSummary>h1 {
+/* #orderSummary>h1 {
     font-size: 25px;
     margin-bottom: 15px;
 }
@@ -175,7 +175,7 @@ body {
 
 #orderSummary>div:last-child>h4 {
     color: black;
-}
+} */
 
 
 /* footer */
@@ -191,6 +191,12 @@ footer>p,.logos>img{
 /* Media QUeries for both smartphone and tablet */
 
 @media only screen and (max-width:810px) {
+    .wrapper{
+        padding: 10px;
+    }
+    #main{
+        flex-direction: column-reverse;
+    }
     #header{
         padding-top: 10px;
         height: 150px;
@@ -199,12 +205,13 @@ footer>p,.logos>img{
     #processing{
         top:65%;
     }
-    #main {
+    .singleRow{
         flex-direction: column;
     }
 
+
     #orderSummary {
-        margin-top: 30px;
+        margin-bottom: 30px;
         width: 100%;
 
     }
