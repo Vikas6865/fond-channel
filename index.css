@@ -1151,7 +1151,18 @@ form.email::after {
 
 
 /****************** login page CSS **************/
+/* change by hitesh */
+#login {
+    display: flex;
+}
+#userIcon{
+    display: none;
+}
 
+#showUsername,#userIcon{
+    align-self: center;
+}
+/* ++++++++++++++++++++++ */
 
 #loginWrapper {
     position: fixed;
