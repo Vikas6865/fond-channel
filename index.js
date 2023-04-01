@@ -407,6 +407,33 @@ regBtn.addEventListener('click',function(){
     }
     localStorage.setItem('userData',JSON.stringify(userObj));
 })
+
+
+
+// ++++++++++++++++++++++++++++++++++++++
+let showUsername=document.getElementById('showUsername');
+let userData=JSON.parse(localStorage.getItem('userData'))||null;
+if(userData!==null){
+  document.getElementById('logBtn').style.display='none';
+  document.getElementById('userIcon').style.display='block';
+  showUsername.innerText=userData.username;
+
+  let logOutBtn=document.createElement('button');
+  logOutBtn.innerText='Log Out';
+  document.getElementById('login').append(logOutBtn);
+
+  logOutBtn.addEventListener('click',function(){
+    localStorage.removeItem("userData");
+    document.getElementById('logBtn').style.display='block';
+    showUsername.innerText=null;
+    logOutBtn.style.display='none';
+    document.getElementById('userIcon').style.display='none';
+  })
+}
+
+
+
+
 // ******************login page js end*********************
 
 let goto = document.querySelector(".image")
@@ -431,3 +458,5 @@ let cartt=document.getElementById("cart")
 cartt.addEventListener("click",()=>{
   location.href="cart.html"
 })
+
+
