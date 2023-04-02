@@ -161,6 +161,18 @@
     letter-spacing: 2px;
 }
 
+#securely-pay{
+
+    border: none;
+    width: 100%;
+    padding: 13px 15px;
+    /* border-radius: ; */
+
+   background-color: rgb(219,222,232)
+
+    
+}
+
 /*********************** UPI Style end here ***********************************/
 
 
