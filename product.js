@@ -5,7 +5,7 @@ let cart=JSON.parse(localStorage.getItem("cart")) ||[]
 displaydata()
 function displaydata(){
     let obj=JSON.parse(localStorage.getItem("product"))
-
+console.log(obj)
 
 document.getElementById("main")
 MediaDeviceInfo.innerHTML=""
@@ -13,7 +13,7 @@ let pic=document.getElementById("pic")
 let image=document.createElement("img")
 
 
-image.src=obj[0].image
+image.src=obj[0].img
 
 let pnb=document.createElement("div")
 pnb.setAttribute("id","pnb")
@@ -61,10 +61,10 @@ mrp.classList.add("per")
 let showprice=document.createElement("div")
 showprice.setAttribute("id","priceanddiscount")
 let price=document.createElement("h3")
-price.innerText=`Price : ${obj[0].price}`
+price.innerText=`Price : ${obj[0].Price}`
 let discount=document.createElement("p")
 discount.setAttribute("id","per")
-discount.innerText=`${obj[0].discount}off`
+discount.innerText=`${obj[0].Discount}off`
 let hmcash=document.createElement("p")
 hmcash.innerText="Get 34 HM Cash🪙"
 showprice.append(price,discount,hmcash)
@@ -78,9 +78,9 @@ freedelivery.innerText=" + Free Shipping"
 shipping.append(shipdate,freedelivery)
 
 let prime=document.createElement("button")
-prime.innerText=`  ⭐ ₹${Math.floor(obj[0].price-150)} for prime Members ➤`
+prime.innerText=`  ⭐ ₹${Math.floor(obj[0].Price-150)} for prime Members ➤`
 let emi=document.createElement("p")
-emi.innerText=`3 Month interest free payments of ₹${Math.floor(obj[0].price/3)} with Easy EMI
+emi.innerText=`3 Month interest free payments of ₹${Math.floor(obj[0].Price/3)} with Easy EMI
 `
 let buy=document.createElement("div")
 buy.setAttribute("id","buy")
@@ -106,13 +106,13 @@ add.innerText="add to cart"
 add.addEventListener("click",()=>{
     
     for(let i=0;i<cart.length;i++){
-        if(cart[i][0].description==obj[0].description){
+        if(cart[i].description==obj[0].description){
             return alert("product already in cart")
             
         }
     }
     alert("Product added to cart")
-    cart.push(obj)
+    cart.push(obj[0])
     localStorage.setItem("cart",JSON.stringify(cart))
 })
 let quickbuy=document.createElement("button")

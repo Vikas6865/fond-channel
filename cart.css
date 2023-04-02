@@ -2,7 +2,14 @@
 .wrapper {
     padding: 0px 70px;
 }
-
+.pimage{
+   
+    width: 15%;
+}
+.pimage>img{
+    margin-top: 5%;
+    width: 100%;
+}
 #header {
     height: 70px;
     display: flex;

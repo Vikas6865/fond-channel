@@ -79,7 +79,7 @@ function appendData(items){
           Price:element.Price,
           mrp : element.mrp,
           Discount: element.Discount,
-          image : element.img,
+          img : element.img,
           brand : element.brand,
           quantity : element.quantity
         }
@@ -220,7 +220,7 @@ function appendData2(items){
           Price:element.Price,
           mrp : element.mrp,
           Discount: element.Discount,
-          image : element.img,
+          img : element.img,
           brand : element.brand,
           quantity : element.quantity
         }

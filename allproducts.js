@@ -51,13 +51,15 @@ function appendData(items){
           let carddata2=[]
           let obj={
             description : element.description,
-          price:element.price,
+          Price:element.Price,
           mrp : element.mrp,
-          discount: element.Discount,
-          image : element.img,
+          Discount: element.Discount,
+          img : element.img,
           brand : element.brand,
-          quantity : element.quantity
+          quantity : element.quantity,
+          name : "hiise"
         }
+        console.log(obj)
         carddata2.push(obj)
         localStorage.setItem("product",JSON.stringify(carddata2))
         location.href="product.html"
