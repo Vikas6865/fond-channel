@@ -153,6 +153,25 @@ function appendData(items){
         displayData.append(card)
         
     });
+
+      // search part
+  let formsearch = document.querySelector("form");
+  formsearch.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let search = formsearch.searchBox.value;
+
+    let filtered = newDataArr.filter((ele) => {
+      if (
+        // ele.name.toUpperCase().includes(search.toUpperCase()) === true ||
+        ele.brand.toUpperCase().includes(search.toUpperCase()) === true
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    appendData(filtered);
+  });
     
 }
 
