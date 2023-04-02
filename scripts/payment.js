@@ -76,18 +76,16 @@ confirmCheck.addEventListener("click",(()=>{
 
     // alert("cikasd")
 
-}))
+    }))
 
 
- okbuttonEl.addEventListener("click",(()=>{
+    okbuttonEl.addEventListener("click",(()=>{
 
     popup.classList.remove("open-popup")
 
     location.href="index.html"
 
 }))
-
-
     }
 }))
 
@@ -201,13 +199,25 @@ upiInp.addEventListener("click", (() => {
 
     let securelyPayEl = document.getElementById("securely-pay")
 
+    let popup=document.getElementById("popup")
+    let okbuttonEl=document.getElementById("okbutton")
+
     securelyPayEl.addEventListener("click",(()=>{
 
-        alert("vik")
+        popup.classList.add("open-popup")
+        
     }))
-    // let securelyPaymentDiv = document.getElementById("securely-payment")
 
-    let popup=document.getElementById("popup")
+    okbuttonEl.addEventListener("click",(()=>{
+
+            // popup.classList.remove("open-popup")
+        
+            location.href="index.html"
+        
+         }))
+
+
+
 
 
     okhdfcBut.addEventListener("click", (() => {
