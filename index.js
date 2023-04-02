@@ -75,10 +75,10 @@ function appendData(items){
         imgdiv.addEventListener("click",()=>{
           let carddata2=[]
           let obj={
-            description : element.description,
-          price:element.price,
+          description : element.description,
+          Price:element.Price,
           mrp : element.mrp,
-          discount: element.Discount,
+          Discount: element.Discount,
           image : element.img,
           brand : element.brand,
           quantity : element.quantity
@@ -108,7 +108,7 @@ function appendData(items){
         pricediv.setAttribute("id","price")
 
         let price = document.createElement("h3")
-        price.innerText = "₹"+element.price
+        price.innerText = "₹"+element.Price
         
         let mrp = document.createElement("h3")
         mrp.innerText = "₹"+element.mrp
@@ -121,7 +121,7 @@ function appendData(items){
         let primeimg = document.createElement("img")
         primeimg.setAttribute("src","https://static1.hkrtcdn.com/hknext/static/media/common/premium_member.svg")
         let primeinfo = document.createElement("p")
-        primeinfo.innerText = `₹${element.price-150} for Premium Members`
+        primeinfo.innerText = `₹${element.Price-150} for Premium Members`
 
         let btndiv = document.createElement("div")
         btndiv.setAttribute("class","btn")
@@ -216,10 +216,10 @@ function appendData2(items){
         imgdiv.addEventListener("click",()=>{
           let carddata2=[]
           let obj={
-            description : element.description,
-          price:element.price,
+          description : element.description,
+          Price:element.Price,
           mrp : element.mrp,
-          discount: element.Discount,
+          Discount: element.Discount,
           image : element.img,
           brand : element.brand,
           quantity : element.quantity
@@ -250,7 +250,7 @@ function appendData2(items){
         pricediv.setAttribute("id","price")
 
         let price = document.createElement("h3")
-        price.innerText = "₹"+element.price
+        price.innerText = "₹"+element.Price
         
         let mrp = document.createElement("h3")
         mrp.innerText = "₹"+element.mrp
@@ -263,29 +263,29 @@ function appendData2(items){
         let primeimg = document.createElement("img")
         primeimg.setAttribute("src","https://static1.hkrtcdn.com/hknext/static/media/common/premium_member.svg")
         let primeinfo = document.createElement("p")
-        primeinfo.innerText = `₹${element.price-150} for Premium Members`
+        primeinfo.innerText = `₹${element.Price-150} for Premium Members`
 
         let btndiv = document.createElement("div")
         btndiv.setAttribute("class","btn")
         btndiv.setAttribute("id","btn")
 
         btndiv.addEventListener("click", () => {
-            let flag = true;
-            for (let item in products) {
-              if (products[item].id == element.id) {
-                flag = false;
-              }
+          let flag = true;
+          for (let item in products) {
+            if (products[item].id == element.id) {
+              flag = false;
             }
-            if (flag == true) {
-              let protienMass = {...element};
-              let array=[...protienMass]
-              products.push(protienMass);
-              localStorage.setItem("cart", JSON.stringify(products));
-              alert("Product added to cart 😊");
-            } else {
-              alert("Product already in cart 😀");
-            }
-          });
+          }
+          if (flag == true) {
+            let protienMass = {...element};
+            products.push(protienMass);
+            localStorage.setItem("cart", JSON.stringify(products));
+            alert("Product added to cart 😊");
+          } else {
+            alert("Product already in cart 😀");
+          }
+        
+        });
 
 
 
