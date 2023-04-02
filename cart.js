@@ -43,20 +43,16 @@ cart.forEach((res)=>{
             quantity.innerText=res.quantity
             dec.innerText="-"
             remove.innerText = "remove"
-            // remove.addEventListener("click",()=>{
-               
-            //     let cart4=[]
-            //     for(let i=0;i<cart.length;i++){
-            //         if(res.Price!=cart[i].Price){
-                        
-            //             cart4.push([cart[i]])
-                        
-            //         }
-            //     }
-            //     console.log("hiii")
-            //     localStorage.setItem("cart",JSON.stringify(cart4))
-            //     displaydata()
-            // })
+          
+            remove.addEventListener("click",()=>{
+                cart=cart.filter((ele)=>{
+                    return ele.id!=res.id
+                })
+                localStorage.setItem("cart",JSON.stringify(cart))
+            displaydata()
+            })
+                 
+          
 
 inc.addEventListener("click",()=>{
     res=res.quantity++
