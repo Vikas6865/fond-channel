@@ -617,3 +617,9 @@ form.email input[type=text] {
       
     width: 100px;
   }
+  /* search butten */
+  #submit{
+    visibility: hidden;
+    /* border: none; */
+    /* display: none; */
+  }
