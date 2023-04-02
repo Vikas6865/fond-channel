@@ -74,7 +74,9 @@ dec.addEventListener("click",()=>{
     let sum2=0
     let pay=document.getElementById("Total-Pay")
     let pay2=document.getElementById("totalmrp")
-
+pay.addEventListener("click",()=>{
+    location.href="address.html"
+})
     for(let i=0;i<cart.length;i++){
         sum+=cart[i].Price*cart[i].quantity
         sum2+=cart[i].mrp*cart[i].quantity
