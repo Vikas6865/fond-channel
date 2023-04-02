@@ -2,6 +2,9 @@
 .wrapper {
     padding: 0px 70px;
 }
+#container{
+    width: 60%;
+}
 .pimage{
    
     width: 15%;
