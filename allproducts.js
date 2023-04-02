@@ -1,4 +1,5 @@
 let displayData = document.getElementById("products")
+let products = JSON.parse(localStorage.getItem("cart")) || [];
 let API = "https://mock-api-server-fkxx.onrender.com/data"
 let newDataArr = [];
 fetchData(API)
@@ -115,7 +116,22 @@ function appendData(items){
         btndiv.setAttribute("class","btn")
         btndiv.setAttribute("id","btn")
 
-        
+        btndiv.addEventListener("click",()=>{
+          let flag = true;
+            for (let item in products) {
+              if (products[item].id == element.id) {
+                flag = false;
+              }
+            }
+            if (flag == true) {
+              let protienMass = {...element};
+              products.push(protienMass);
+              localStorage.setItem("cart", JSON.stringify(products));
+              alert("Product added to cart 😊");
+            } else {
+              alert("Product already in cart 😀");
+            }
+        })
        
 
 
