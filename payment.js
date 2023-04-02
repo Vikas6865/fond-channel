@@ -5,7 +5,13 @@ let paymentMethod = document.getElementById("payment-method-card")
 
 let cashOnDel=document.getElementById("cashOn")
 
+let addressDetail = JSON.parse(localStorage.getItem('address'));
 
+console.log(addressDetail)
+
+let addresPara=document.getElementById("addres-para")
+
+addresPara.innerText=`${addressDetail.area}, MobileNumber: ${addressDetail.mobile}`
 // cash on delivery part start here
 
 cashOnDel.addEventListener("click",(()=>{
@@ -30,23 +36,83 @@ cashOnDel.addEventListener("click",(()=>{
 </div>
 
 <div class="confirm-order">
-    <button id="confirm-cash-order">Confirm Order</button>
+    <button type="submit" class="btn" id="butcash">Confirm Order</button>
+  
+    <div class="popup" id="popup" class="">
+        <img src="" alt="">
+        <h2>Thank You!</h2>
+        <p>Your Payment has been successfully completed.Thanks!</p>
+        <button type="button" id="okbutton">OK</button>
+    
+    </div>
+    </div>
+   
 </div>`
 
 paymentMethod.innerHTML=cashAppend
 
-let confirmCashBut=document.getElementById("confirm-cash-order")
-
 
 let confirmCheck=document.getElementById("confirm-check")
+let popup=document.getElementById("popup")
+
 
 confirmCheck.addEventListener("click",(()=>{
     if(confirmCheck.checked){
-        confirmCashBut.style.background="rgb(0,181,183)"
-        confirmCashBut.style.color="white"
-        confirmCashBut.style.border="1 px solid white"
+        butcash.style.background="rgb(0,181,183)"
+        butcash.style.color="white"
+        butcash.style.border="1 px solid white"
+
+
+        let cash=document.getElementById("butcash")
+
+
+        let okbuttonEl=document.getElementById("okbutton")
+
+
+        cash.addEventListener("click",(()=>{
+
+   
+            popup.classList.add("open-popup")
+
+    // alert("cikasd")
+
+}))
+
+
+ okbuttonEl.addEventListener("click",(()=>{
+
+    popup.classList.remove("open-popup")
+
+    location.href="index.html"
+
+}))
+
+
     }
 }))
+
+
+
+// let cash=document.getElementById("butcash")
+
+// let okbuttonEl=document.getElementById("okbutton")
+
+// cash.addEventListener("click",(()=>{
+
+//     popup.classList.add("open-popup")
+
+//     // alert("cikasd")
+
+// }))
+
+
+//  okbuttonEl.addEventListener("click",(()=>{
+
+//     popup.classList.remove("open-popup")
+
+//     // window.location.href="http://127.0.0.1:5500/payment.html?myName=h"
+
+// }))
 
 
 
@@ -73,7 +139,7 @@ upiInp.addEventListener("click", (() => {
     </div>
     <div class="input-upi-id">
     <form name="myForm" class="enterUpi">
-        <input value="" type="text" name="myName" placeholder="Enter UPI ID"  id="#enterUpi">
+        <input value="" type="text" name="myName" placeholder="Enter UPI ID"  id="enterUpi" ">
     </form>
     <button id="verify">Verify</button>
    
@@ -86,7 +152,7 @@ upiInp.addEventListener("click", (() => {
 
  <div id="kyc">
     <div class="kyc-code">
-        <button id="okbsi">@oksbi</button>
+        <button id="oksbi">@oksbi</button>
     </div>
     <div class="kyc-code">
         <button id="okhdfc">@okhdfc</button>
@@ -100,8 +166,23 @@ upiInp.addEventListener("click", (() => {
 
  </div>
 
- <div id="securely-payment">
- <a href="" id="securely-pay">Securely Pay</a>
+
+<div id="securely-payment">
+<button id="securely-pay">Securely Pay</button>
+
+<div class="popup" id="popup" class="">
+    <img src="" alt="">
+    <h2>Thank You!</h2>
+    <p>Your Payment has been successfully completed.Thanks!</p>
+    <button type="button" id="okbutton">OK</button>
+
+</div>
+</div>
+
+
+</div>
+
+
 
  </div>`
 
@@ -110,7 +191,7 @@ upiInp.addEventListener("click", (() => {
     let okhdfcBut = document.getElementById("okhdfc")
     let okiciciBut = document.getElementById("okicici")
     let okaxisBut = document.getElementById("okaxis")
-    //  let oksbiBut=document.getElementById("oksbi")
+     let oksbiBut=document.getElementById("oksbi")
 
     let formel = document.querySelector("form")
     let enterUpi = document.getElementById("enterUpi")
@@ -119,16 +200,48 @@ upiInp.addEventListener("click", (() => {
     let verifyButton = document.getElementById("verify")
 
     let securelyPayEl = document.getElementById("securely-pay")
-    let securelyPaymentDiv = document.getElementById("securely-payment")
+
+    securelyPayEl.addEventListener("click",(()=>{
+
+        alert("vik")
+    }))
+    // let securelyPaymentDiv = document.getElementById("securely-payment")
+
+    let popup=document.getElementById("popup")
 
 
     okhdfcBut.addEventListener("click", (() => {
+          
+      
+        let text = document.getElementById("enterUpi").value;
 
-        // enterUpi=document.getElementById("enterUpi").value+`${okhdfcBut.textContent}`
+        document.getElementById("enterUpi").value = document.getElementById("enterUpi").value + document.getElementById("okhdfc").innerText;
+       
 
-        console.log(okhdfcBut.innerText)
-
+        
     }))
+
+   okaxisBut.addEventListener("click",(()=>{
+    
+    let text = document.getElementById("enterUpi").value;
+
+    document.getElementById("enterUpi").value = document.getElementById("enterUpi").value + document.getElementById("okaxis").innerText;
+   }))
+
+   okiciciBut.addEventListener("click",(()=>{
+    
+    let text = document.getElementById("enterUpi").value;
+
+    document.getElementById("enterUpi").value = document.getElementById("enterUpi").value + document.getElementById("okicici").innerText;
+   }))
+
+  
+   oksbiBut.addEventListener("click",(()=>{
+    
+    let text = document.getElementById("enterUpi").value;
+
+    document.getElementById("enterUpi").value = document.getElementById("enterUpi").value + document.getElementById("oksbi").innerText;
+   }))
 
     verifyButton.addEventListener("click", (() => {
 
@@ -141,6 +254,7 @@ upiInp.addEventListener("click", (() => {
 
 
 }))
+
 
 // upi addeventlistner end here
 
@@ -202,9 +316,16 @@ debitInp.addEventListener("click", (() => {
         <option value="">2039</option>
         <option value="">2040</option>
     </select>
-    <div class="cvv">
-        <button class="cvv-num">CVV</button>
-    </div>
+    <div class="cv">
+    
+    <form action = "" method = "">
+    
+        <input type="text" name="" id="cvv-num" placeholder="CVV"  maxlength="4"><br>
+        
+        
+       
+     </form>
+     </div>
 
     </div>
     <div class="check-box">
@@ -222,5 +343,31 @@ debitInp.addEventListener("click", (() => {
 
 
 }))
+
+// order summary work here
+
+let cart = JSON.parse(localStorage.getItem("cart"))
+
+display(cart)
+function display(cart) {
+
+
+
+    let totalMrp = 0;
+    let totalPrice = 0;
+    let totalDisc = 0;
+
+    cart.forEach((ele) => {
+        totalMrp += ele.mrp * ele.quantity;
+        totalPrice += ele.Price * ele.quantity;
+    })
+    totalDisc = totalMrp - totalPrice;
+
+    document.getElementById('totalmrp').innerText=totalMrp;
+    document.getElementById('totaldiscount').innerText=totalDisc;
+    document.getElementById('paytm').innerText=totalPrice;
+    document.getElementById('totalitem').innerText=`(${cart.length} items)`;
+}
+  
 
 
